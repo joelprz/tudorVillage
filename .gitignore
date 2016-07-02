@@ -1,33 +1,22 @@
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Logs
+logs
+*.log
+npm-debug.log*
 
-# Precompiled Headers
-*.gch
-*.pch
+# Runtime data
+pids
+*.pid
+*.seed
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# node-waf configuration
+.lock-wscript
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Dependency directories
+node_modules
+jspm_packages
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Optional npm cache directory
+.npm
 
-# Debug files
-*.dSYM/
-*.su
+# Optional REPL history
+.node_repl_history
