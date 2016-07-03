@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-const TutorList = ({tutors}) => {
+const TutorsList = ({tutors}) => {
   return (
     <div>
     {tutors.map(tutor =>
@@ -10,8 +10,8 @@ const TutorList = ({tutors}) => {
   );
 };
 
-TutorList.propTypes = {
+TutorsList.propTypes = {
   tutors: PropTypes.array.isRequired
 };
 
-export default TutorList;
+export default TutorsList;

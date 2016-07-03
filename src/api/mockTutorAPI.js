@@ -198,6 +198,19 @@ class TutorApi {
     });
   }
 
+  static getTutorById(tutorId) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+
+        const tutor = tutors.find(function(tutor){  
+          return tutor.id === tutorId;
+        });
+
+        resolve(Object.assign([], tutor));
+      }, delay);
+    });
+  }
+
   static deleteTutor(tutorId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {

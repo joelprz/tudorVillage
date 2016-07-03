@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as tutorActions from '../../actions/tutorActions';
-import TutorList from './TutorList';
+import TutorsList from './TutorsList';
 
 class TutorsPage extends React.Component {
   constructor(props, context) {
@@ -14,7 +14,7 @@ class TutorsPage extends React.Component {
     return (
       <div>
         <h1>Tutors</h1>
-        <TutorList tutors={tutors} />
+        <TutorsList tutors={tutors} />
       </div>
     );
   }
@@ -38,7 +38,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TutorsPage);
-
-
-
-
