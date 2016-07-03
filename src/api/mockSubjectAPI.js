@@ -67,7 +67,6 @@ function replaceAll(str, find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
 }
 
-//This would be performed on the server in a real app. Just stubbing in.
 const generateId = (subject) => {
   return replaceAll(subject.title, ' ', '-');
 };
@@ -82,10 +81,9 @@ class SubjectApi {
   }
 
   static saveSubject(subject) {
-    subject = Object.assign({}, subject); // to avoid manipulating object passed in.
+    subject = Object.assign({}, subject);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        // Simulate server-side validation
         const minSubjectTitleLength = 1;
         if (subject.title.length < minSubjectTitleLength) {
           reject(`Title must be at least ${minSubjectTitleLength} characters.`);
@@ -95,9 +93,6 @@ class SubjectApi {
           const existingSubjectIndex = subjects.findIndex(a => a.id == subject.id);
           subjects.splice(existingSubjectIndex, 1, subject);
         } else {
-          //Just simulating creation here.
-          //The server would generate ids and watchHref's for new subjects in a real app.
-          //Cloning so copy returned is passed by value rather than by reference.
           subject.id = generateId(subject);
           subjects.push(subject);
         }

@@ -163,7 +163,6 @@ const tutors = [
   }
 ];
 
-//This would be performed on the server in a real app. Just stubbing in.
 const generateId = (tutor) => {
   const rangeCeil = 999999;
   return (Math.floor(Math.random() * rangeCeil) + 1) + '-' + (Math.floor(Math.random() * rangeCeil) + 1);
@@ -181,7 +180,6 @@ class TutorApi {
   static saveTutor(tutor) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        // Simulate server-side validation
         const minTutorNameLength = 3;
         if (tutor.name.length < minTutorNameLength) {
           reject(`Name must be at least ${minTutorNameLength} characters.`);
@@ -191,9 +189,6 @@ class TutorApi {
           const existingTutorIndex = tutors.findIndex(a => a.id == tutor.id);
           tutors.splice(existingTutorIndex, 1, tutor);
         } else {
-          //Just simulating creation here.
-          //The server would generate ids for new tutors in a real app.
-          //Cloning so copy returned is passed by value rather than by reference.
           tutor.id = generateId(tutor);
           tutors.push(tutor);
         }
