@@ -3,9 +3,14 @@ import {Link, IndexLink} from 'react-router';
 
 const Header = () => {
   return (
-    <nav>
-      <IndexLink to="/" activeClassName="active">Home</IndexLink>
-    </nav>
+      <header>
+        <img src="../../styles/img/tutorville-logo.png" />
+        <nav>
+          <IndexLink to="/" activeClassName="active">Home</IndexLink>
+          {" | "}
+          <Link to="/search" activeClassName="active">Search</Link> 
+        </nav>
+      </header>
   );
 };
 
