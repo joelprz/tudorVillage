@@ -4,7 +4,7 @@ import {Link, IndexLink} from 'react-router';
 const Header = () => {
   return (
       <header>
-        <img src="../../styles/img/tutorville-logo.png" />
+        <img src="./tutorville-logo.png" />
         <nav>
           <IndexLink to="/" activeClassName="active">Home</IndexLink>
           {" | "}

@@ -8,6 +8,7 @@ const SubjectList = ({subjects}) => {
         <tr>
           <th>ID</th>
           <th>Title</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

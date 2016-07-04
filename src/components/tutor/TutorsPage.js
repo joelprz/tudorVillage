@@ -3,10 +3,17 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as tutorActions from '../../actions/tutorActions';
 import TutorsList from './TutorsList';
+import {browserHistory} from 'react-router';
 
 class TutorsPage extends React.Component {
   constructor(props, context) {
     super(props, context);
+
+    this.redirectToAddTutorPage = this.redirectToAddTutorPage.bind(this);
+  }
+
+  redirectToAddTutorPage() {
+    browserHistory.push('/tutor');
   }
 
   render() {
@@ -14,6 +21,11 @@ class TutorsPage extends React.Component {
     return (
       <div>
         <h1>Tutors</h1>
+        <input type="submit"
+          value="Add Tutor"
+          className="btn btn-primary pull-left"
+          onClick={this.redirectToAddTutorPage}/>
+
         <TutorsList tutors={tutors} />
       </div>
     );
