@@ -9,6 +9,9 @@ type 'npm run build' from the project root to bundle and start express server
 App visible at localhost:3000
 
 ##Development Build
+App will run with watchers and hot reload
+
 type 'npm start' from the project root to bundle and start express server
+
 
 App visible at localhost:3000
