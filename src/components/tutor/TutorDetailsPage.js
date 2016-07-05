@@ -12,7 +12,8 @@ class TutorDetailsPage extends React.Component {
 
     this.state = {
       tutor: Object.assign({}, props.tutor),
-      errors: {}
+      errors: {},
+      saving: false
     };
 
     this.updateTutorState = this.updateTutorState.bind(this);
@@ -34,7 +35,13 @@ class TutorDetailsPage extends React.Component {
 
   saveTutor(event) {
     event.preventDefault();
-    this.props.actions.saveTutor(this.state.tutor);
+    this.setState({saving: true});
+    this.props.actions.saveTutor(this.state.tutor)
+      .then(() => this.redirect());
+  }
+
+  redirect() {
+    this.setState({saving: false});
     this.context.router.push('/tutors');
   }
 
@@ -44,6 +51,7 @@ class TutorDetailsPage extends React.Component {
         onChange={this.updateTutorState}
         onSave={this.saveTutor}
         tutor={this.state.tutor}
+        loading={this.state.saving}
         errors={this.state.errors} />
     );
   }
@@ -60,11 +68,8 @@ TutorDetailsPage.contextTypes = {
 };
 
 function getTutorById(tutors, tutorId) {
-  console.log("getTutorById ", tutors);
-  console.log("IDEE ", tutorId);
   const tutor = tutors.filter(tutor => tutor.id === tutorId);
   if (tutor.length) {
-    console.log("LEN ", tutor[0]);
     return tutor[0];
   }
   return null;

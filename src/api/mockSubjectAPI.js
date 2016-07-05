@@ -4,62 +4,62 @@ const subjects = [
   {
     id:"Accounting",
     title: "Accounting",
-    tutors: [8111313]
+    tutors: ["8111313"]
   },
   {
     id:"Algebra-1",
     title: "Algebra 1",
-    tutors: [7847491, 8493257, 8490923, 7890423]
+    tutors: ["7847491", "8493257", "8490923", "7890423"]
   },
   {
     id:"Biology",
     title: "Biology",
-    tutors: [8493257]
+    tutors: ["8493257"]
   },
   {
     id:"Chemistry",
     title: "Chemistry",
-    tutors: [8467660, 7681719, 8111313]
+    tutors: ["8467660", "7681719", "8111313"]
   },
   {
     id:"Finance",
     title: "Finance",
-    tutors: [7550116]
+    tutors: ["7550116"]
   },
   {
     id:"Geometry",
     title: "Geometry",
-    tutors: [8111313, 7550116]
+    tutors: ["8111313", "7550116"]
   },
   {
     id:"Literature",
     title: "Literature",
-    tutors: [8490923, 8111313, 7550116]
+    tutors: ["8490923", "8111313", "7550116"]
   },
   {
     id:"Philosophy",
     title: "Philosophy",
-    tutors: [7847491, 8493257, 7681719, 8490923, 9688, 7890423]
+    tutors: ["7847491", "8493257", "7681719", "8490923", "9688", "7890423"]
   },
   {
     id:"Reading",
     title: "Reading",
-    tutors: [7681719, 7890423]
+    tutors: ["7681719", "7890423"]
   },
   {
     id:"Spanish",
     title: "Spanish",
-    tutors: [8467660, 7681719, 8490923, 8111313]
+    tutors: ["8467660", "7681719", "8490923", "8111313"]
   },
   {
     id:"Trigonometry",
     title: "Trigonometry",
-    tutors: [8467660, 8490923, 9688, 7890423]
+    tutors: ["8467660", "8490923", "9688", "7890423"]
   },
   {
     id:"Writing",
     title: "Writing",
-    tutors: [8140762, 7550116]
+    tutors: ["8140762", "7550116"]
   }
 ];
 
