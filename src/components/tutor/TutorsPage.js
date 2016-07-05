@@ -11,13 +11,15 @@ class TutorsPage extends React.Component {
 
     this.state = {
       isOnline: false,
-      radiusSelected: false
+      radiusSelected: false,
+      sortApplied: 0
     };
 
     this.redirectToAddTutorPage = this.redirectToAddTutorPage.bind(this);
     this.filterTutors = this.filterTutors.bind(this);
     this.filt = this.filt.bind(this);
     this.toggleRadius = this.toggleRadius.bind(this);
+    this.sortTutors = this.sortTutors.bind(this);
   }
 
   redirectToAddTutorPage() {
@@ -34,6 +36,10 @@ class TutorsPage extends React.Component {
     this.setState({radiusSelected: !st});
   }
 
+  sortTutors(event) {
+    this.setState({sortApplied: event.target.value});
+  }
+
   filterTutors(tutors) {
     if (this.state.isOnline) {
       tutors = tutors.filter(tutor => {
@@ -46,6 +52,58 @@ class TutorsPage extends React.Component {
       tutors = tutors.filter(tutor => {
         return (parseInt(tutor.distance ,10)) <= 5;
       });
+    }
+
+    // Ugly and verbose
+    if (this.state.sortApplied > 0) {
+      switch(this.state.sortApplied) {
+        case "1":
+          tutors.sort(function (a, b) {
+            if (a.rank < b.rank) {
+              return 1;
+            }
+            if (a.rank > b.rank) {
+              return -1;
+            }
+            return 0;
+          });
+          break;
+        case "2":
+          tutors.sort(function (a, b) {
+            if (a.rank > b.rank) {
+              return 1;
+            }
+            if (a.rank < b.rank) {
+              return -1;
+            }
+            return 0;
+          });
+          break;
+        case "3":
+          tutors.sort(function (a, b) {
+            if (a.rate < b.rate) {
+              return 1;
+            }
+            if (a.rate > b.rate) {
+              return -1;
+            }
+            return 0;
+          });
+          break;
+        case "4":
+          tutors.sort(function (a, b) {
+            if (a.rate > b.rate) {
+              return 1;
+            }
+            if (a.rate < b.rate) {
+              return -1;
+            }
+            return 0;
+          });
+          break;
+        default:
+          break;
+      }
     }
 
     return tutors;
@@ -82,6 +140,20 @@ class TutorsPage extends React.Component {
               onClick={this.toggleRadius}
               value={this.state.radiusSelected}/>
             <label htmlFor="radius-selected">Within 5 miles</label>
+          </div>
+          <div className="col-xs-3 col-lg-3">
+            <label htmlFor="sort-tutors">Sort by</label>
+            <select
+              name="sort-tutors"
+              value={this.state.sortApplied}
+              onChange={this.sortTutors}
+              className="form-control">
+                <option value="0">None</option>
+                <option value="1">Highest Rank</option>
+                <option value="2">Lowest Rank</option>
+                <option value="3">Highest Price</option>
+                <option value="4">Lowest Price</option>    
+            </select>
           </div>
         </div>
         <TutorsList tutors={tutors} />
