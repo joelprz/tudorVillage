@@ -20,12 +20,16 @@ class TutorsPage extends React.Component {
     const {tutors} = this.props;
     return (
       <div>
-        <h1>Tutors</h1>
-        <input type="submit"
-          value="Add Tutor"
-          className="btn btn-primary pull-left"
-          onClick={this.redirectToAddTutorPage}/>
-
+        <div className="row tutors-title">
+          <div className="col-xs-12 col-lg-12">
+            <h1 className="pull-left">Tutors</h1>
+            <input className="pull-right" type="submit"
+              value="Add Tutor"
+              className="btn btn-primary"
+              onClick={this.redirectToAddTutorPage}/>
+          </div>
+        </div>  
+        
         <TutorsList tutors={tutors} />
       </div>
     );

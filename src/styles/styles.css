@@ -3,15 +3,58 @@
 #app {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #4d4d4d;
-  min-width: 550px;
-  max-width: 850px;
-  margin: 0 auto;
 }
 
-a.active {
-  color: orange;
+#app .navbar-default {
+    background-color: #00507f;
+    border-color: #00507f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
 }
 
-nav {
-  padding-top: 20px;
+#app .app-container {
+  padding-top: 78px;
+}
+
+#app .navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+#app .logo-img {
+  padding: 10px 30px 10px 0;
+}
+
+#app .navbar-nav>li>a {
+    line-height: 57px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tutors-title {
+  line-height: 80px;
+  margin-bottom: 15px;
+}
+
+.tutors-title h1 {
+  margin-right: 20px;
+}
+
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+}
+
+.no-padding {
+  padding-left: 0 !important;
+}
+
+.edit-tutor {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
