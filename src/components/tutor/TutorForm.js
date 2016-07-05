@@ -95,6 +95,14 @@ const TutorForm = ({tutor, onSave, onChange, loading, errors}) => {
               onChange={onChange}
               error={errors.length} />
           </div>
+          <div className="col-xs-4 col-lg-4">
+            <TextInput
+              name="distance"
+              label="distance"
+              value={tutor.distance}
+              onChange={onChange}
+              error={errors.length} />
+          </div>
         </div>
         <TextArea
           name="description"

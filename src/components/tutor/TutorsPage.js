@@ -36,12 +36,15 @@ class TutorsPage extends React.Component {
 
   filterTutors(tutors) {
     if (this.state.isOnline) {
-      tutors = tutors.filter(tutor => tutor.isOnline === true);
+      tutors = tutors.filter(tutor => {
+        // hacky evaluation of boolean saved as string
+        return tutor.isOnline === true || tutor.isOnline === "true";
+      });
     }
 
     if (this.state.radiusSelected) {
       tutors = tutors.filter(tutor => {
-        return tutor.distance <= 5;
+        return (parseInt(tutor.distance ,10)) <= 5;
       });
     }
 
