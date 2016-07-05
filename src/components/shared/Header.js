@@ -1,10 +1,11 @@
 import React, {PropTypes} from 'react';
 import {Link, IndexLink} from 'react-router';
+import logoImg from '../../styles/img/tutorville-logo.png';
 
 const Header = () => {
   return (
       <header>
-        <img src="/src/styles/img/tutorville-logo.png" />
+        <img src={logoImg} />
         <nav>
           <IndexLink to="/" activeClassName="active">Home</IndexLink>
           {" | "}

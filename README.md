@@ -3,13 +3,8 @@
 
 cd into project root and run 'npm install' (may require sudo)
 
-##Production Build
-type 'npm run build' from the project root to bundle and start express server
-
-App visible at localhost:3000
-
 ##Development Build
-App will run with watchers and hot reload
+App will run with hot reload and watchers for linting and tests
 
 type 'npm start' from the project root to bundle and start express server
 
